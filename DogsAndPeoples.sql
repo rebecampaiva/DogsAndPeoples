@@ -1,0 +1,73 @@
+USE [DogsAndPeoples]
+GO
+
+/****** Object:  Table [dbo].[Caes]    Script Date: 18/06/2021 13:37:31 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Caes](
+	[CaesId] [int] IDENTITY(1,1) NOT NULL,
+	[Nome] [varchar](150) NULL,
+ CONSTRAINT [PK_Caes] PRIMARY KEY CLUSTERED 
+(
+	[CaesId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+USE [DogsAndPeoples]
+GO
+
+/****** Object:  Table [dbo].[CaesDono]    Script Date: 18/06/2021 13:38:01 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[CaesDono](
+	[DonoId] [int] NOT NULL,
+	[CaoId] [int] NOT NULL
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[CaesDono]  WITH CHECK ADD  CONSTRAINT [FK_CaesDono_Caes] FOREIGN KEY([CaoId])
+REFERENCES [dbo].[Caes] ([CaesId])
+GO
+
+ALTER TABLE [dbo].[CaesDono] CHECK CONSTRAINT [FK_CaesDono_Caes]
+GO
+
+ALTER TABLE [dbo].[CaesDono]  WITH CHECK ADD  CONSTRAINT [FK_CaesDono_Donos] FOREIGN KEY([DonoId])
+REFERENCES [dbo].[Donos] ([DonoId])
+GO
+
+ALTER TABLE [dbo].[CaesDono] CHECK CONSTRAINT [FK_CaesDono_Donos]
+GO
+
+USE [DogsAndPeoples]
+GO
+
+/****** Object:  Table [dbo].[Donos]    Script Date: 18/06/2021 13:38:13 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Donos](
+	[DonoId] [int] IDENTITY(1,1) NOT NULL,
+	[Nome] [varchar](150) NOT NULL,
+ CONSTRAINT [PK_Donos] PRIMARY KEY CLUSTERED 
+(
+	[DonoId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+

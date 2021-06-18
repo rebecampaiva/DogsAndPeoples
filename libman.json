@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "font-awesome@5.15.3",
+      "destination": "wwwroot/font-awesome/"
+    },
+    {
+      "library": "datatables@1.10.21",
+      "destination": "wwwroot/lib/datatables/"
+    },
+    {
+      "library": "typeahead.js@0.11.1",
+      "destination": "wwwroot/lib/typeahead.js/"
+    }
+  ]
+}

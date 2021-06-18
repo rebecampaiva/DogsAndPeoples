@@ -1,0 +1,31 @@
+﻿@model IEnumerable<DogsAndPeoples.Models.Caes>
+
+@{ ViewData["Title"] = "Index"; }
+<link href="~/lib/datatables/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+<h4 class="text-tam clearfix mb-4"><i class="fas fa-fw fa-file"></i> Cães<a asp-action="Create" class="btn btn-sm btn-outline-primary float-right"><i class="fas fa-fw fa-edit"></i>Adicionar</a></h4>
+<hr />
+
+    <table class="table" id="tbCaes">
+        <thead class="thead-light">
+            <tr>
+                
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+               
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+           
+        </tbody>
+    </table>
+
+
+@section Scripts {
+
+    <script src="~/lib/datatables/js/jquery.dataTables.js"></script>
+    <script src="~/lib/datatables/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/js/Caes.js"></script>
+
+}
